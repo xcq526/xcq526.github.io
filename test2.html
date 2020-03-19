@@ -1,16 +1,11 @@
 <html>
 <body>
-
+  <script src="./stat.js"></script>
+  <script src="./underscore.js"></script>
 <script>
  
- function reduce(array, combine, start) {
-     var current = start;
-  for (var element of array) {
-        current = combine(current, element);
-  }
-  return current;
-} 
-  
+ var reduce="haha"
+
 var data=[
       {name:'计算机安装与维护',credit:2},
       {name:'静态网页制作',credit:2},
@@ -18,13 +13,15 @@ var data=[
       {name:'大学英语',credit:2},
       {name:'软件技术导论',credit:2}
 ];
-console.log(reduce(
-    data, 
-    function(a, b) {
-      return a+b.credit;
-    }, 0));
+
+
+data.stat={max:_.max(data,function(it){return it.credit})}
+console.log(data.stat);
+
+
+
+
 
 </script>
-
 </body>
 </html>
